@@ -2,7 +2,6 @@ nums = (int(i) for i in input().strip().split())
 sort_nums = sorted((num, i) for i, num in enumerate(nums))
 request = int(input())
 
-
 def search(num, req):
     first, last = 0, len(sort_nums) - 1
     while first != last:
@@ -13,6 +12,5 @@ def search(num, req):
         else:
             first += 1
     return ('таких элементов нет')
-
 
 print(search(sort_nums, request))
