@@ -1,0 +1,18 @@
+nums = (int(i) for i in input().strip().split())
+sort_nums = sorted((num, i) for i, num in enumerate(nums))
+request = int(input())
+
+
+def search(num, req):
+    first, last = 0, len(sort_nums) - 1
+    while first != last:
+        if num[first][0] + num[last][0] == req:
+            return (str(num[first][1]) + ' ' + str(num[last][1]))
+        if num[first][0] + num[last][0] > req:
+            last -= 1
+        else:
+            first += 1
+    return ('таких элементов нет')
+
+
+print(search(sort_nums, request))
